@@ -6,8 +6,8 @@ import android.widget.TextView;
 /**
  * Created by Renato on 17/05/2016.
  */
-public class ProcessamentoAsync extends AsyncTask<Integer, Integer, Integer> {
-    TextView textoasync;
+final class ProcessamentoAsync extends AsyncTask<Integer, Integer, Integer> {
+    private TextView textoasync;
     public ProcessamentoAsync(TextView textoasync){
         this.textoasync = textoasync;
     }
