@@ -9,6 +9,8 @@ import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.example.renato.workload.CPUIntensive1;
+
 public final class MainActivity extends AppCompatActivity {
 
     @Override
@@ -25,10 +27,7 @@ public final class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 TextView textoNonAsync = (TextView) findViewById(R.id.statusnonasync);
                 textoNonAsync.setText("Started!");
-                long a = 1;
-                for (long i = 0; i < 100000000L; i++) {
-                    a = (i * a) % 7;
-                }
+                (new CPUIntensive1()).execute();
                 textoNonAsync.setText("Ended!");
             }
         });
@@ -38,7 +37,16 @@ public final class MainActivity extends AppCompatActivity {
         botaoAsync.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                new ProcessamentoAsync(textoAsync).execute();
+                new ProcessamentoAsync(textoAsync, new CPUIntensive1()).execute();
+            }
+        });
+
+        Button botaoAsyncNativeThread = (Button)findViewById(R.id.thrdasyncbtn);
+        final TextView textoAsyncNativeThread = (TextView)findViewById(R.id.statusthrdasync);
+        botaoAsyncNativeThread.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                new ProcessamentoAsync(textoAsyncNativeThread, new CPUIntensive1()).execute();
             }
         });
     }

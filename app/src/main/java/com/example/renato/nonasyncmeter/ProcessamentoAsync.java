@@ -3,13 +3,17 @@ package com.example.renato.nonasyncmeter;
 import android.os.AsyncTask;
 import android.widget.TextView;
 
+import com.example.renato.workload.Workload;
+
 /**
  * Created by Renato on 17/05/2016.
  */
 final class ProcessamentoAsync extends AsyncTask<Integer, Integer, Integer> {
     private TextView textoasync;
-    public ProcessamentoAsync(TextView textoasync){
+    private Workload workload;
+    public ProcessamentoAsync(TextView textoasync, Workload workload){
         this.textoasync = textoasync;
+        this.workload = workload;
     }
 
     @Override
@@ -19,10 +23,7 @@ final class ProcessamentoAsync extends AsyncTask<Integer, Integer, Integer> {
 
     @Override
     protected Integer doInBackground(Integer... params) {
-        long a = 1;
-        for(long i = 0; i < 100000000L; i++){
-            a=(i*a)%7;
-        }
+        workload.execute();
         return null;
     }
 
