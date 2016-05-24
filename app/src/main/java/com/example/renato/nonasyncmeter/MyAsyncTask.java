@@ -8,10 +8,10 @@ import com.example.renato.workload.Workload;
 /**
  * Created by Renato on 17/05/2016.
  */
-final class ProcessamentoAsync extends AsyncTask<Integer, Integer, Integer> {
+final class MyAsyncTask extends AsyncTask<Integer, Integer, Integer> {
     private TextView textoasync;
     private Workload workload;
-    public ProcessamentoAsync(TextView textoasync, Workload workload){
+    public MyAsyncTask(TextView textoasync, Workload workload){
         this.textoasync = textoasync;
         this.workload = workload;
     }

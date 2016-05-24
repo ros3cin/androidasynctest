@@ -1,5 +1,6 @@
 package com.example.renato.nonasyncmeter;
 
+import android.app.Activity;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -22,13 +23,11 @@ public final class MainActivity extends AppCompatActivity {
 
 
         Button botaoNonAsync = (Button)findViewById(R.id.nonasyncbtn);
+        final TextView textoNonAsync = (TextView) findViewById(R.id.statusnonasync);
         botaoNonAsync.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                TextView textoNonAsync = (TextView) findViewById(R.id.statusnonasync);
-                textoNonAsync.setText("Started!");
-                (new CPUIntensive1()).execute();
-                textoNonAsync.setText("Ended!");
+                (new ProcessamentoSync(textoNonAsync,new CPUIntensive1())).execute();
             }
         });
 
@@ -37,16 +36,17 @@ public final class MainActivity extends AppCompatActivity {
         botaoAsync.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                new ProcessamentoAsync(textoAsync, new CPUIntensive1()).execute();
+                (new ProcessamentoAsyncTask(textoAsync, new CPUIntensive1())).execute();
             }
         });
 
         Button botaoAsyncNativeThread = (Button)findViewById(R.id.thrdasyncbtn);
         final TextView textoAsyncNativeThread = (TextView)findViewById(R.id.statusthrdasync);
+        final Activity mySelf = this;
         botaoAsyncNativeThread.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                new ProcessamentoAsync(textoAsyncNativeThread, new CPUIntensive1()).execute();
+                (new ProcessamentoJavaThread(textoAsyncNativeThread, new CPUIntensive1(),mySelf)).execute();
             }
         });
     }

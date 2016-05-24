@@ -41,7 +41,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/asyncbtn"
-            android:text="Async Call"/>
+            android:text="Async Task Call"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -62,7 +62,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/thrdasyncbtn"
-            android:text="Native Thread Call"/>
+            android:text="Java Thread Call"/>
 
         <TextView
             android:layout_width="wrap_content"

@@ -8,7 +8,7 @@ import com.example.renato.workload.Workload;
 public class CPUIntensive1 implements Workload {
     public void execute(){
         long a = 1;
-        for(long i = 0; i < 100000000L; i++){
+        for(long i = 0; i < 1000000000L; i++){
             a=(i*a)%7;
         }
     }

@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html><head>
+
+<title>Battery Historian analysis for java_threaded_2.txt</title>
+<p>Battery Historian analysis for java_threaded_2.txt</p>
+
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+      <script type="text/javascript" src="https://www.google.com/jsapi?autoload={'modules':[{'name':'visualization','version':'1','packages':['timeline']}]}"></script>
+    
+<script type="text/javascript">
+google.setOnLoadCallback(drawChart);
+
+
+    var dataTable;
+    var chart;
+    var options;
+    var default_width = 3000
+function drawChart() {
+
+    container = document.getElementById('chart');
+    chart = new google.visualization.Timeline(container);
+
+    dataTable = new google.visualization.DataTable();
+    dataTable.addColumn({ type: 'string', id: 'Position' });
+    dataTable.addColumn({ type: 'string', id: 'Name' });
+    dataTable.addColumn({ type: 'date', id: 'Start' });
+    dataTable.addColumn({ type: 'date', id: 'End' });
+    dataTable.addRows([
+
+['battery_level', 'battery_level=080(0s-0s)', new Date(1464055457 * 1000), new Date(1464055458 * 1000)],
+['plugged', '+plugged(0s-+6s)', new Date(1464055457 * 1000), new Date(1464055463 * 1000)],
+['plugged', '+plugged(+2m22s-+2m35s)', new Date(1464055599 * 1000), new Date(1464055612 * 1000)],
+['screen', '+screen(0s-+2m35s)', new Date(1464055457 * 1000), new Date(1464055612 * 1000)],
+['top', '+top=u0a45:"com.example.renato.nonasyncmeter"(0s-+2m35s)', new Date(1464055457 * 1000), new Date(1464055612 * 1000)],
+['wake_lock *', '+wake_lock(0s-+2m35s)', new Date(1464055457 * 1000), new Date(1464055612 * 1000)],
+['running', '+running(0s-+2m35s)', new Date(1464055457 * 1000), new Date(1464055612 * 1000)],
+['wake_lock_in', '+wake_lock_in=1001:"RILJ"(+1m37s-+1m37s)', new Date(1464055554 * 1000), new Date(1464055555 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"*alarm*:android.intent.action.TIME_TICK":"com.qualcomm.telephony"(+1m42s-+1m42s)', new Date(1464055559 * 1000), new Date(1464055560 * 1000)],
+['wake_lock_in', '+wake_lock_in=1001:"RILJ"(+2m19s-+2m19s)', new Date(1464055596 * 1000), new Date(1464055597 * 1000)],
+['wake_lock_in', '+wake_lock_in=1001:"RILJ"(+1m47s-+1m47s)', new Date(1464055564 * 1000), new Date(1464055565 * 1000)],
+['wake_lock_in', 'LOCATION(+1m50s-+1m50s)', new Date(1464055567 * 1000), new Date(1464055568 * 1000)],
+['wake_lock_in', '+wake_lock_in=u0a20:"UlrDispSvcFastWL"(+1m50s-+1m50s)', new Date(1464055567 * 1000), new Date(1464055568 * 1000)],
+['wake_lock_in', '+wake_lock_in=1001:"RILJ"(+1m50s-+1m50s)', new Date(1464055567 * 1000), new Date(1464055568 * 1000)],
+['wake_lock_in', '+wake_lock_in=u0a20:"ContextManagerWakeLock"(+1m50s-+1m50s)', new Date(1464055567 * 1000), new Date(1464055568 * 1000)],
+['wake_lock_in', '+wake_lock_in=1001:"RILJ"(+1m56s-+1m56s)', new Date(1464055573 * 1000), new Date(1464055574 * 1000)],
+['wake_lock_in', '+wake_lock_in=1001:"RILJ"(+2m02s-+2m02s)', new Date(1464055579 * 1000), new Date(1464055580 * 1000)],
+['wake_lock_in', '+wake_lock_in=1001:"RILJ"(+2m04s-+2m04s)', new Date(1464055581 * 1000), new Date(1464055582 * 1000)],
+['wake_lock_in', '+wake_lock_in=1001:"RILJ"(+2m07s-+2m07s)', new Date(1464055584 * 1000), new Date(1464055585 * 1000)],
+['wake_lock_in', 'LOCATION(+2m23s-+2m23s)', new Date(1464055600 * 1000), new Date(1464055601 * 1000)],
+['wake_lock_in', '+wake_lock_in=1001:"RILJ"(+2m12s-+2m12s)', new Date(1464055589 * 1000), new Date(1464055590 * 1000)],
+['wake_lock_in', '+wake_lock_in=u0a20:"UlrDispSvcFastWL"(+6s-+6s)', new Date(1464055463 * 1000), new Date(1464055464 * 1000)],
+['wake_lock_in', 'LOCATION(+6s-+6s)', new Date(1464055463 * 1000), new Date(1464055464 * 1000)],
+['wake_lock_in', '+wake_lock_in=u0a20:"ContextManagerWakeLock"(+6s-+6s)', new Date(1464055463 * 1000), new Date(1464055464 * 1000)],
+['wake_lock_in', '+wake_lock_in=1001:"RILJ"(+7s-+7s)', new Date(1464055464 * 1000), new Date(1464055465 * 1000)],
+['wake_lock_in', '+wake_lock_in=1001:"RILJ"(+2m16s-+2m16s)', new Date(1464055593 * 1000), new Date(1464055594 * 1000)],
+['wake_lock_in', '+wake_lock_in=1001:"RILJ"(+2m17s-+2m17s)', new Date(1464055594 * 1000), new Date(1464055595 * 1000)],
+['wake_lock_in', 'LOCATION(+11s-+11s)', new Date(1464055468 * 1000), new Date(1464055469 * 1000)],
+['wake_lock_in', '+wake_lock_in=u0a20:"ContextManagerWakeLock"(+2m22s-+2m22s)', new Date(1464055599 * 1000), new Date(1464055600 * 1000)],
+['wake_lock_in', '+wake_lock_in=u0a20:"UlrDispSvcFastWL"(+2m22s-+2m22s)', new Date(1464055599 * 1000), new Date(1464055600 * 1000)],
+['wake_lock_in', 'LOCATION(+2m22s-+2m22s)', new Date(1464055599 * 1000), new Date(1464055600 * 1000)],
+['wake_lock_in', '+wake_lock_in=1001:"RILJ"(+2m22s-+2m22s)', new Date(1464055599 * 1000), new Date(1464055600 * 1000)],
+['wake_lock_in', '+wake_lock_in=u0a20:"*net_scheduler*"(+15s-+15s)', new Date(1464055472 * 1000), new Date(1464055473 * 1000)],
+['wake_lock_in', '+wake_lock_in=u0a144:"wake:com.google.android.apps.photos/.dbprocessor.impl.DatabaseProcessorService"(+2m24s-+2m24s)', new Date(1464055601 * 1000), new Date(1464055602 * 1000)],
+['wake_lock_in', '+wake_lock_in=u0a144:"DatabaseProcessorService"(+2m24s-+2m25s)', new Date(1464055601 * 1000), new Date(1464055603 * 1000)],
+['wake_lock_in', '+wake_lock_in=u0a144:"wake:com.google.android.apps.photos/.trash.purger.PurgeTrashService"(+2m25s-+2m25s)', new Date(1464055602 * 1000), new Date(1464055603 * 1000)],
+['wake_lock_in', '+wake_lock_in=u0a20:"*net_scheduler*"(+2m25s-+2m25s)', new Date(1464055602 * 1000), new Date(1464055603 * 1000)],
+['wake_lock_in', '+wake_lock_in=1001:"RILJ"(+2m25s-+2m25s)', new Date(1464055602 * 1000), new Date(1464055603 * 1000)],
+['wake_lock_in', '+wake_lock_in=u0a20:"*walarm*:CONTEXT_MANAGER_ALARM_WAKEUP_148778682"(+20s-+20s)', new Date(1464055477 * 1000), new Date(1464055478 * 1000)],
+['wake_lock_in', '+wake_lock_in=u0a20:"ContextManagerWakeLock"(+20s-+20s)', new Date(1464055477 * 1000), new Date(1464055478 * 1000)],
+['wake_lock_in', '+wake_lock_in=1001:"RILJ"(+21s-+21s)', new Date(1464055478 * 1000), new Date(1464055479 * 1000)],
+['wake_lock_in', '+wake_lock_in=1001:"RILJ"(+26s-+26s)', new Date(1464055483 * 1000), new Date(1464055484 * 1000)],
+['wake_lock_in', '+wake_lock_in=u0a47:"*walarm*:com.google.android.googlequicksearchbox/com.google.android.apps.gsa.sidekick.main.TrafficIntentService"(+27s-+27s)', new Date(1464055484 * 1000), new Date(1464055485 * 1000)],
+['wake_lock_in', 'LOCATION(+28s-+28s)', new Date(1464055485 * 1000), new Date(1464055486 * 1000)],
+['wake_lock_in', '+wake_lock_in=u0a47:"TrafficIntentService_onHandleIntent"(+28s-+30s)', new Date(1464055485 * 1000), new Date(1464055487 * 1000)],
+['wake_lock_in', '+wake_lock_in=1001:"RILJ"(+28s-+29s)', new Date(1464055485 * 1000), new Date(1464055487 * 1000)],
+['wake_lock_in', '+wake_lock_in=u0a47:"CalendarIntentService"(+28s-+28s)', new Date(1464055485 * 1000), new Date(1464055486 * 1000)],
+['wake_lock_in', '+wake_lock_in=u0a69:"wake:com.google.android.calendar/com.android.calendar.alerts.AlertService"(+30s-+35s)', new Date(1464055487 * 1000), new Date(1464055492 * 1000)],
+['wake_lock_in', 'LOCATION(+30s-+30s)', new Date(1464055487 * 1000), new Date(1464055488 * 1000)],
+['wake_lock_in', '+wake_lock_in=u0a47:"TrafficIntentService_onHandleIntent"(+30s-+30s)', new Date(1464055487 * 1000), new Date(1464055488 * 1000)],
+['wake_lock_in', '+wake_lock_in=-1:"screen"(0s-+2m35s)', new Date(1464055457 * 1000), new Date(1464055612 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"*alarm*:android.intent.action.TIME_TICK":"com.qualcomm.telephony"(+42s-+42s)', new Date(1464055499 * 1000), new Date(1464055500 * 1000)],
+['wake_lock_in', '+wake_lock_in=u0a73:"*walarm*:com.google.android.apps.hangouts.CLEANUP_DB"(+48s-+49s)', new Date(1464055505 * 1000), new Date(1464055506 * 1000)],
+['wake_lock_in', '+wake_lock_in=u0a73:"hangouts_rtcs"(+49s-+49s)', new Date(1464055506 * 1000), new Date(1464055507 * 1000)],
+['wake_lock_in', '+wake_lock_in=u0a179:"*alarm*":"com.facebook.lite"(+49s-+50s)', new Date(1464055506 * 1000), new Date(1464055508 * 1000)],
+['wake_lock_in', '+wake_lock_in=u0a20:"ContextManagerWakeLock"(+50s-+50s)', new Date(1464055507 * 1000), new Date(1464055508 * 1000)],
+['wake_lock_in', 'LOCATION(+50s-+51s)', new Date(1464055507 * 1000), new Date(1464055509 * 1000)],
+['wake_lock_in', 'LOCATION(+50s-+54s)', new Date(1464055507 * 1000), new Date(1464055511 * 1000)],
+['wake_lock_in', '+wake_lock_in=u0a47:"*alarm*":"com.google.android.googlequicksearchbox:search"(+50s-+50s)', new Date(1464055507 * 1000), new Date(1464055508 * 1000)],
+['wake_lock_in', '+wake_lock_in=1001:"RILJ"(+50s-+50s)', new Date(1464055507 * 1000), new Date(1464055508 * 1000)],
+['wake_lock_in', '+wake_lock_in=u0a20:"UlrDispSvcFastWL"(+50s-+50s)', new Date(1464055507 * 1000), new Date(1464055508 * 1000)],
+['wake_lock_in', '+wake_lock_in=u0a179:"wake:com.facebook.lite/.intent.WakefulIntentService"(+50s-+50s)', new Date(1464055507 * 1000), new Date(1464055508 * 1000)],
+['wake_lock_in', '+wake_lock_in=u0a20:"*alarm*":"com.google.android.gms"(+50s-+50s)', new Date(1464055507 * 1000), new Date(1464055508 * 1000)],
+['wake_lock_in', '+wake_lock_in=u0a20:"UlrDispSvcFastWL"(+50s-+51s)', new Date(1464055507 * 1000), new Date(1464055509 * 1000)],
+['wake_lock_in', 'LOCATION(+50s-+50s)', new Date(1464055507 * 1000), new Date(1464055508 * 1000)],
+['wake_lock_in', '+wake_lock_in=u0a36:"*alarm*":"com.motorola.motocare"(+50s-+50s)', new Date(1464055507 * 1000), new Date(1464055508 * 1000)],
+['wake_lock_in', '+wake_lock_in=u0a177:"*alarm*":(+50s-+50s)', new Date(1464055507 * 1000), new Date(1464055508 * 1000)],
+['wake_lock_in', 'LOCATION(+51s-+51s)', new Date(1464055508 * 1000), new Date(1464055509 * 1000)],
+['wake_lock_in', '+wake_lock_in=u0a20:"UlrDispSvcFastWL"(+51s-+51s)', new Date(1464055508 * 1000), new Date(1464055509 * 1000)],
+['wake_lock_in', '+wake_lock_in=u0a20:"UlrDispSvcSlowWL"(+51s-+53s)', new Date(1464055508 * 1000), new Date(1464055510 * 1000)],
+['wake_lock_in', 'LOCATION(+52s-+52s)', new Date(1464055509 * 1000), new Date(1464055510 * 1000)],
+['wake_lock_in', 'LOCATION(+54s-+54s)', new Date(1464055511 * 1000), new Date(1464055512 * 1000)],
+['wake_lock_in', 'LOCATION(+56s-+56s)', new Date(1464055513 * 1000), new Date(1464055514 * 1000)],
+['wake_lock_in', '+wake_lock_in=u0a177:"*walarm*:com.google.android.location.ALARM_WAKEUP_ACTIVITY_DETECTION"(+59s-+59s)', new Date(1464055516 * 1000), new Date(1464055517 * 1000)],
+['wake_lock_in', 'LOCATION(+59s-+1m02s)', new Date(1464055516 * 1000), new Date(1464055519 * 1000)],
+['wake_lock_in', '+wake_lock_in=u0a20:"*walarm*:com.google.android.location.ALARM_WAKEUP_ACTIVITY_DETECTION"(+59s-+59s)', new Date(1464055516 * 1000), new Date(1464055517 * 1000)],
+['wake_lock_in', 'LOCATION(+59s-+59s)', new Date(1464055516 * 1000), new Date(1464055517 * 1000)],
+['wake_lock_in', '+wake_lock_in=u0a47:"*walarm*:com.google.android.location.ALARM_WAKEUP_ACTIVITY_DETECTION"(+59s-+59s)', new Date(1464055516 * 1000), new Date(1464055517 * 1000)],
+['wake_lock_in', '+wake_lock_in=u0a20:"UlrDispSvcFastWL"(+1m02s-+1m02s)', new Date(1464055519 * 1000), new Date(1464055520 * 1000)],
+['wake_lock_in', 'LOCATION(+1m02s-+1m02s)', new Date(1464055519 * 1000), new Date(1464055520 * 1000)],
+['wake_lock_in', '+wake_lock_in=u0a73:"register_service_start_wakelock"(+1m04s-+1m05s)', new Date(1464055521 * 1000), new Date(1464055523 * 1000)],
+['wake_lock_in', '+wake_lock_in=u0a73:"matchstick_broadcast_wakelock"(+1m04s-+1m09s)', new Date(1464055521 * 1000), new Date(1464055526 * 1000)],
+['wake_lock_in', '+wake_lock_in=u0a20:"*net_scheduler*"(+2m34s-+2m34s)', new Date(1464055611 * 1000), new Date(1464055612 * 1000)],
+['wake_lock_in', 'LOCATION(+1m07s-+1m07s)', new Date(1464055524 * 1000), new Date(1464055525 * 1000)],
+['wake_lock_in', 'LOCATION(+1m07s-+1m11s)', new Date(1464055524 * 1000), new Date(1464055528 * 1000)],
+['wake_lock_in', '+wake_lock_in=u0a20:"*walarm*:com.google.android.location.ALARM_WAKEUP_ACTIVITY_DETECTION"(+1m07s-+1m07s)', new Date(1464055524 * 1000), new Date(1464055525 * 1000)],
+['wake_lock_in', '+wake_lock_in=u0a177:"*walarm*:com.google.android.location.ALARM_WAKEUP_ACTIVITY_DETECTION"(+1m07s-+1m07s)', new Date(1464055524 * 1000), new Date(1464055525 * 1000)],
+['wake_lock_in', '+wake_lock_in=u0a47:"*walarm*:com.google.android.location.ALARM_WAKEUP_ACTIVITY_DETECTION"(+1m07s-+1m07s)', new Date(1464055524 * 1000), new Date(1464055525 * 1000)],
+['wake_lock_in', 'LOCATION(+1m11s-+1m11s)', new Date(1464055528 * 1000), new Date(1464055529 * 1000)],
+['wake_lock_in', '+wake_lock_in=u0a20:"Icing"(+2m35s-+2m35s)', new Date(1464055612 * 1000), new Date(1464055613 * 1000)],
+['wake_lock_in', 'LOCATION(+1m16s-+1m16s)', new Date(1464055533 * 1000), new Date(1464055534 * 1000)],
+['wake_lock_in', 'LOCATION(+1m16s-+1m20s)', new Date(1464055533 * 1000), new Date(1464055537 * 1000)],
+['wake_lock_in', '+wake_lock_in=u0a177:"*walarm*:com.google.android.location.ALARM_WAKEUP_ACTIVITY_DETECTION"(+1m16s-+1m16s)', new Date(1464055533 * 1000), new Date(1464055534 * 1000)],
+['wake_lock_in', '+wake_lock_in=u0a47:"*walarm*:com.google.android.location.ALARM_WAKEUP_ACTIVITY_DETECTION"(+1m16s-+1m16s)', new Date(1464055533 * 1000), new Date(1464055534 * 1000)],
+['wake_lock_in', '+wake_lock_in=u0a20:"*walarm*:com.google.android.location.ALARM_WAKEUP_ACTIVITY_DETECTION"(+1m16s-+1m16s)', new Date(1464055533 * 1000), new Date(1464055534 * 1000)],
+['wake_lock_in', 'LOCATION(+1m20s-+1m20s)', new Date(1464055537 * 1000), new Date(1464055538 * 1000)],
+['wake_lock_in', 'LOCATION(+2m28s-+2m28s)', new Date(1464055605 * 1000), new Date(1464055606 * 1000)],
+['wake_lock_in', '+wake_lock_in=u0a20:"*walarm*:com.google.android.location.ALARM_WAKEUP_ACTIVITY_DETECTION"(+1m25s-+1m25s)', new Date(1464055542 * 1000), new Date(1464055543 * 1000)],
+['wake_lock_in', '+wake_lock_in=u0a177:"*walarm*:com.google.android.location.ALARM_WAKEUP_ACTIVITY_DETECTION"(+1m25s-+1m25s)', new Date(1464055542 * 1000), new Date(1464055543 * 1000)],
+['wake_lock_in', 'LOCATION(+1m25s-+1m25s)', new Date(1464055542 * 1000), new Date(1464055543 * 1000)],
+['wake_lock_in', 'LOCATION(+1m25s-+1m28s)', new Date(1464055542 * 1000), new Date(1464055545 * 1000)],
+['wake_lock_in', '+wake_lock_in=u0a47:"*walarm*:com.google.android.location.ALARM_WAKEUP_ACTIVITY_DETECTION"(+1m25s-+1m25s)', new Date(1464055542 * 1000), new Date(1464055543 * 1000)],
+['wake_lock_in', '+wake_lock_in=u0a20:"UlrDispSvcFastWL"(+1m28s-+1m28s)', new Date(1464055545 * 1000), new Date(1464055546 * 1000)],
+['wake_lock_in', 'LOCATION(+1m28s-+1m28s)', new Date(1464055545 * 1000), new Date(1464055546 * 1000)],
+['wifi', '+wifi(0s-+2m35s)', new Date(1464055457 * 1000), new Date(1464055612 * 1000)],
+['wifi_full_lock', '+wifi_full_lock(+50s-+50s)', new Date(1464055507 * 1000), new Date(1464055508 * 1000)],
+['wifi_full_lock', '+wifi_full_lock(+1m50s-+1m50s)', new Date(1464055567 * 1000), new Date(1464055568 * 1000)],
+['wifi_scan', '+wifi_scan(+1m50s-+1m50s)', new Date(1464055567 * 1000), new Date(1464055568 * 1000)],
+['wifi_multicast', '+wifi_multicast(0s-+7s)', new Date(1464055457 * 1000), new Date(1464055464 * 1000)],
+['wifi_multicast', '+wifi_multicast(+2m28s-+2m35s)', new Date(1464055605 * 1000), new Date(1464055612 * 1000)],
+['wifi_radio', '+wifi_radio(+2m02s-+2m26s)', new Date(1464055579 * 1000), new Date(1464055603 * 1000)],
+['wifi_radio', '+wifi_radio(0s-+25s)', new Date(1464055457 * 1000), new Date(1464055482 * 1000)],
+['wifi_radio', '+wifi_radio(+50s-+1m43s)', new Date(1464055507 * 1000), new Date(1464055560 * 1000)],
+['wifi_radio', '+wifi_radio(+2m28s-+2m35s)', new Date(1464055605 * 1000), new Date(1464055612 * 1000)],
+['wifi_radio', '+wifi_radio(+29s-+45s)', new Date(1464055486 * 1000), new Date(1464055502 * 1000)],
+['wifi_running', '+wifi_running(0s-+2m35s)', new Date(1464055457 * 1000), new Date(1464055612 * 1000)],
+['wifi_suppl', 'wifi_suppl=completed(0s-0s)', new Date(1464055457 * 1000), new Date(1464055458 * 1000)],
+['wifi_signal_strength', 'wifi_signal_strength=4(0s-0s)', new Date(1464055457 * 1000), new Date(1464055458 * 1000)],
+['phone_signal_strength', 'phone_signal_strength=great(0s-0s)', new Date(1464055457 * 1000), new Date(1464055458 * 1000)],
+['phone_signal_strength', 'phone_signal_strength=good(+36s-+36s)', new Date(1464055493 * 1000), new Date(1464055494 * 1000)],
+['phone_signal_strength', 'phone_signal_strength=good(+2m16s-+2m16s)', new Date(1464055593 * 1000), new Date(1464055594 * 1000)],
+['phone_signal_strength', 'phone_signal_strength=great(+2m17s-+2m17s)', new Date(1464055594 * 1000), new Date(1464055595 * 1000)],
+['phone_signal_strength', 'phone_signal_strength=great(+44s-+44s)', new Date(1464055501 * 1000), new Date(1464055502 * 1000)],
+['phone_signal_strength', 'phone_signal_strength=good(+2m28s-+2m28s)', new Date(1464055605 * 1000), new Date(1464055606 * 1000)],
+['status', 'status=charging(0s-0s)', new Date(1464055457 * 1000), new Date(1464055458 * 1000)],
+['status', 'status=charging(+2m24s-+2m24s)', new Date(1464055601 * 1000), new Date(1464055602 * 1000)],
+['status', 'status=discharging(+6s-+6s)', new Date(1464055463 * 1000), new Date(1464055464 * 1000)],
+['health', 'health=good(0s-0s)', new Date(1464055457 * 1000), new Date(1464055458 * 1000)],
+['plug', 'plug=usb(0s-0s)', new Date(1464055457 * 1000), new Date(1464055458 * 1000)],
+['plug', 'plug=usb(+2m22s-+2m22s)', new Date(1464055599 * 1000), new Date(1464055600 * 1000)],
+['plug', 'plug=none(+6s-+6s)', new Date(1464055463 * 1000), new Date(1464055464 * 1000)],
+['charging', '+charging(0s-+6s)', new Date(1464055457 * 1000), new Date(1464055463 * 1000)],
+['stats', 'stats=0:"dump"(0s-0s)', new Date(1464055457 * 1000), new Date(1464055458 * 1000)],
+['stats', 'stats=0:"battery-state"(+6s-+6s)', new Date(1464055463 * 1000), new Date(1464055464 * 1000)],
+['stats', 'stats=0:"wifi-data:_inactive"(+1m43s-+1m43s)', new Date(1464055560 * 1000), new Date(1464055561 * 1000)],
+['stats', 'stats=0:"get-stats"(+11s-+11s)', new Date(1464055468 * 1000), new Date(1464055469 * 1000)],
+['stats', 'stats=0:"wifi-data:_inactive"(+45s-+45s)', new Date(1464055502 * 1000), new Date(1464055503 * 1000)],
+['stats', 'stats=0:"battery-state"(+2m22s-+2m22s)', new Date(1464055599 * 1000), new Date(1464055600 * 1000)],
+['stats', 'stats=0:"get-stats"(+50s-+50s)', new Date(1464055507 * 1000), new Date(1464055508 * 1000)],
+['stats', 'stats=0:"wifi-data:_active"(+50s-+50s)', new Date(1464055507 * 1000), new Date(1464055508 * 1000)],
+['stats', 'stats=0:"get-stats"(+2m28s-+2m28s)', new Date(1464055605 * 1000), new Date(1464055606 * 1000)],
+['stats', 'stats=0:"wifi-data:_inactive"(+25s-+25s)', new Date(1464055482 * 1000), new Date(1464055483 * 1000)],
+['stats', 'stats=0:"wifi-data:_active"(+2m02s-+2m02s)', new Date(1464055579 * 1000), new Date(1464055580 * 1000)],
+['stats', 'stats=0:"dump"(+2m35s-+2m35s)', new Date(1464055612 * 1000), new Date(1464055613 * 1000)],
+['stats', 'stats=0:"wifi-data:_active"(+29s-+29s)', new Date(1464055486 * 1000), new Date(1464055487 * 1000)],
+['tmpwhitelist', '+tmpwhitelist=u0a36:"broadcast:u0a36:com.motorola.motocare.trigger.AlarmTrigger.HourlyAlarmTrigger"(+50s-+1m00s)', new Date(1464055507 * 1000), new Date(1464055517 * 1000)],
+['alarm', '-alarm=u0a47:"*walarm*:com.google.android.location.ALARM_WAKEUP_ACTIVITY_DETECTION"(+1m07s-+1m07s)', new Date(1464055524 * 1000), new Date(1464055525 * 1000)],
+['alarm', '+alarm=u0a177:"*walarm*:com.google.android.location.ALARM_WAKEUP_ACTIVITY_DETECTION"(+1m07s-+1m07s)', new Date(1464055524 * 1000), new Date(1464055525 * 1000)],
+['alarm', '-alarm=u0a177:"*walarm*:com.google.android.location.ALARM_WAKEUP_ACTIVITY_DETECTION"(+1m07s-+1m07s)', new Date(1464055524 * 1000), new Date(1464055525 * 1000)],
+['alarm', '+alarm=1000:"*alarm*:android.intent.action.TIME_TICK":"com.qualcomm.telephony"(+1m42s-+1m42s)', new Date(1464055559 * 1000), new Date(1464055560 * 1000)],
+['alarm', '+alarm=u0a47:"*walarm*:com.google.android.googlequicksearchbox/com.google.android.apps.gsa.sidekick.main.TrafficIntentService"(+27s-+27s)', new Date(1464055484 * 1000), new Date(1464055485 * 1000)],
+['alarm', '+alarm=1000:"*alarm*:android.intent.action.TIME_TICK":"com.qualcomm.telephony"(+42s-+42s)', new Date(1464055499 * 1000), new Date(1464055500 * 1000)],
+['alarm', '-alarm=u0a177:"*walarm*:com.google.android.location.ALARM_WAKEUP_ACTIVITY_DETECTION"(+1m16s-+1m16s)', new Date(1464055533 * 1000), new Date(1464055534 * 1000)],
+['alarm', '+alarm=u0a177:"*walarm*:com.google.android.location.ALARM_WAKEUP_ACTIVITY_DETECTION"(+1m16s-+1m16s)', new Date(1464055533 * 1000), new Date(1464055534 * 1000)],
+['alarm', '-alarm=u0a47:"*walarm*:com.google.android.location.ALARM_WAKEUP_ACTIVITY_DETECTION"(+1m16s-+1m16s)', new Date(1464055533 * 1000), new Date(1464055534 * 1000)],
+['alarm', '+alarm=u0a20:"*walarm*:com.google.android.location.ALARM_WAKEUP_LOCATOR"(+1m50s-+1m50s)', new Date(1464055567 * 1000), new Date(1464055568 * 1000)],
+['alarm', '+alarm=u0a36:"*alarm*:com.motorola.motocare.trigger.AlarmTrigger.HourlyAlarmTrigger":"com.motorola.motocare"(+48s-+49s)', new Date(1464055505 * 1000), new Date(1464055506 * 1000)],
+['alarm', '-alarm=u0a179:"*walarm*:com.facebook.lite.analytics.CHECK_DEVICE_STATUS"(+50s-+50s)', new Date(1464055507 * 1000), new Date(1464055508 * 1000)],
+['alarm', '-alarm=u0a20:"*walarm*:com.google.android.location.ALARM_WAKEUP_LOCATOR"(+50s-+50s)', new Date(1464055507 * 1000), new Date(1464055508 * 1000)],
+['alarm', '-alarm=u0a20:"*walarm*:com.google.android.location.ALARM_WAKEUP_ACTIVITY_DETECTION"(+50s-+50s)', new Date(1464055507 * 1000), new Date(1464055508 * 1000)],
+['alarm', '-alarm=u0a47:"*walarm*:com.google.android.location.ALARM_WAKEUP_ACTIVITY_DETECTION"(+50s-+50s)', new Date(1464055507 * 1000), new Date(1464055508 * 1000)],
+['alarm', '-alarm=u0a36:"*alarm*:com.motorola.motocare.trigger.AlarmTrigger.HourlyAlarmTrigger":"com.motorola.motocare"(+50s-+50s)', new Date(1464055507 * 1000), new Date(1464055508 * 1000)],
+['alarm', '-alarm=u0a177:"*walarm*:com.google.android.location.ALARM_WAKEUP_ACTIVITY_DETECTION"(+50s-+50s)', new Date(1464055507 * 1000), new Date(1464055508 * 1000)],
+['alarm', '+alarm=u0a20:"*walarm*:CONTEXT_MANAGER_ALARM_WAKEUP_148778682"(+20s-+20s)', new Date(1464055477 * 1000), new Date(1464055478 * 1000)],
+['alarm', '+alarm=u0a177:"*walarm*:com.google.android.location.ALARM_WAKEUP_ACTIVITY_DETECTION"(+1m25s-+1m25s)', new Date(1464055542 * 1000), new Date(1464055543 * 1000)],
+['alarm', '-alarm=u0a177:"*walarm*:com.google.android.location.ALARM_WAKEUP_ACTIVITY_DETECTION"(+1m25s-+1m25s)', new Date(1464055542 * 1000), new Date(1464055543 * 1000)],
+['alarm', '-alarm=u0a47:"*walarm*:com.google.android.location.ALARM_WAKEUP_ACTIVITY_DETECTION"(+1m25s-+1m25s)', new Date(1464055542 * 1000), new Date(1464055543 * 1000)],
+['alarm', '-alarm=u0a177:"*walarm*:com.google.android.location.ALARM_WAKEUP_ACTIVITY_DETECTION"(+59s-+59s)', new Date(1464055516 * 1000), new Date(1464055517 * 1000)],
+['alarm', '-alarm=u0a47:"*walarm*:com.google.android.location.ALARM_WAKEUP_ACTIVITY_DETECTION"(+59s-+59s)', new Date(1464055516 * 1000), new Date(1464055517 * 1000)],
+['alarm', '+alarm=u0a177:"*walarm*:com.google.android.location.ALARM_WAKEUP_ACTIVITY_DETECTION"(+59s-+59s)', new Date(1464055516 * 1000), new Date(1464055517 * 1000)],
+]);
+	options = {
+	timeline: { colorByRowLabel: true},
+	'width': 3000,
+	'height': 3000, 
+	colors: ['#4070cf', '#2e8b57', '#cbb69d', '#dc3912', 
+	
+	
+	'#cbb69d', '#990099', '#ff33cc', '#119fc8', 
+	'#888888', '#888888', '#888888', '#888888', 
+	'#109618', '#119fc8', '#9900aa', '#dc3912', 
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	'#9ac658', '#888888', '#888888', '#888888', 
+	
+	
+	'#4070cf', '#4070cf', '#4070cf', '#4070cf', '#4070cf', ]
+	};
+
+
+  //make sure allocate enough vertical space
+  options['height'] = dataTable.getNumberOfRows() * 40;
+  chart.draw(dataTable, options);
+
+  //get vertical coordinate of scale bar
+  var svg = document.getElementById('chart').getElementsByTagName('svg')[0];
+  var label = svg.children[2].children[0];
+  var y = label.getAttribute('y');
+  //plus height of scale bar
+  var chart_div_height = parseInt(y) + 50;
+  var chart_height = chart_div_height;
+
+  //set chart height to exact height
+  options['height'] = chart_height;
+  $('#chart').css('height', chart_div_height);
+  svg.setAttribute('height', chart_height);
+  var content = $('#chart').children()[0];
+  $(content).css('height', chart_height);
+  var inner = $(content).children()[0];
+  $(inner).css('height', chart_height);
+}
+
+
+function redrawChart() {
+    var scale = document.getElementById("scale").value;
+    scale = scale.replace('%', '') / 100
+    options['width'] = scale * default_width;
+    chart.draw(dataTable, options);
+}
+
+</script>
+<style>
+#redrawButton{
+width:100px;
+}
+</style>
+
+</head>
+<body>
+
+<div id="chart">
+<b>WARNING: Visualizer disabled. If you see this message, download the HTML then open it.</b>
+</div>
+<p><b>WARNING:</b>
+<br>*: wake_lock field only shows the first/last wakelock held 
+when the system is awake. For more detail, use wake_lock_in.<br>To enable full wakelock reporting (post-KitKat only) : 
+<br>adb shell dumpsys batterystats --enable full-wake-history</p>
+<pre>(Local time 23:04:17 - 23:06:52, 2m elapsed)</pre>
+<p>
+Zoom: <input id="scale" type="text" value="100%"></input><button type="button" id="redrawButton"onclick="redrawChart()">redraw</button></p>
+</p>
+
+<b>Event summary:
+</b><br><pre>
+  1 events, 155.612s total 155.612s avg 155.612s median: +wake_lock_in=-1:"screen" (first at 23:04:17)
+ 93 events, 56.512s total  0.608s avg  0.003s median: LOCATION (first at 23:04:23)
+  1 events,  5.121s total  5.121s avg  5.121s median: +wake_lock_in=u0a69:"wake:com.google.android.calendar/com.android.calendar.alerts.AlertService" (first at 23:04:47)
+  1 events,  5.005s total  5.005s avg  5.005s median: +wake_lock_in=u0a73:"matchstick_broadcast_wakelock" (first at 23:05:21)
+  2 events,  2.300s total  1.150s avg  1.628s median: +wake_lock_in=u0a47:"TrafficIntentService_onHandleIntent" (first at 23:04:45)
+  1 events,  1.723s total  1.723s avg  1.723s median: +wake_lock_in=u0a20:"UlrDispSvcSlowWL" (first at 23:05:08)
+ 10 events,  1.408s total  0.141s avg  0.077s median: +wake_lock_in=u0a20:"UlrDispSvcFastWL" (first at 23:04:23)
+  1 events,  1.152s total  1.152s avg  1.152s median: +wake_lock_in=u0a73:"*walarm*:com.google.android.apps.hangouts.CLEANUP_DB" (first at 23:05:05)
+ 22 events,  0.856s total  0.039s avg  0.019s median: +wake_lock_in=1001:"RILJ" (first at 23:04:24)
+  1 events,  0.567s total  0.567s avg  0.567s median: +wake_lock_in=u0a144:"wake:com.google.android.apps.photos/.dbprocessor.impl.DatabaseProcessorService" (first at 23:06:41)
+  1 events,  0.389s total  0.389s avg  0.389s median: +wake_lock_in=u0a20:"Icing" (first at 23:06:52)
+  3 events,  0.283s total  0.094s avg  0.075s median: +wake_lock_in=u0a20:"*net_scheduler*" (first at 23:04:32)
+  1 events,  0.267s total  0.267s avg  0.267s median: +wake_lock_in=u0a177:"*alarm*": (first at 23:05:07)
+  1 events,  0.267s total  0.267s avg  0.267s median: +wake_lock_in=u0a47:"*alarm*":"com.google.android.googlequicksearchbox:search" (first at 23:05:07)
+  1 events,  0.261s total  0.261s avg  0.261s median: +wake_lock_in=u0a179:"*alarm*":"com.facebook.lite" (first at 23:05:06)
+  1 events,  0.248s total  0.248s avg  0.248s median: +wake_lock_in=u0a47:"CalendarIntentService" (first at 23:04:45)
+  1 events,  0.235s total  0.235s avg  0.235s median: +wake_lock_in=u0a73:"register_service_start_wakelock" (first at 23:05:21)
+  5 events,  0.121s total  0.024s avg  0.006s median: +wake_lock_in=u0a20:"ContextManagerWakeLock" (first at 23:04:23)
+  1 events,  0.119s total  0.119s avg  0.119s median: +wake_lock_in=u0a73:"hangouts_rtcs" (first at 23:05:06)
+  2 events,  0.111s total  0.056s avg  0.057s median: +wake_lock_in=1000:"*alarm*:android.intent.action.TIME_TICK":"com.qualcomm.telephony" (first at 23:04:59)
+  1 events,  0.106s total  0.106s avg  0.106s median: +wake_lock_in=u0a144:"DatabaseProcessorService" (first at 23:06:41)
+  1 events,  0.100s total  0.100s avg  0.100s median: +wake_lock_in=u0a144:"wake:com.google.android.apps.photos/.trash.purger.PurgeTrashService" (first at 23:06:42)
+  4 events,  0.041s total  0.010s avg  0.010s median: +wake_lock_in=u0a47:"*walarm*:com.google.android.location.ALARM_WAKEUP_ACTIVITY_DETECTION" (first at 23:05:16)
+  4 events,  0.041s total  0.010s avg  0.010s median: +wake_lock_in=u0a177:"*walarm*:com.google.android.location.ALARM_WAKEUP_ACTIVITY_DETECTION" (first at 23:05:16)
+  4 events,  0.041s total  0.010s avg  0.010s median: +wake_lock_in=u0a20:"*walarm*:com.google.android.location.ALARM_WAKEUP_ACTIVITY_DETECTION" (first at 23:05:16)
+  1 events,  0.025s total  0.025s avg  0.025s median: +wake_lock_in=u0a20:"*walarm*:CONTEXT_MANAGER_ALARM_WAKEUP_148778682" (first at 23:04:37)
+  1 events,  0.018s total  0.018s avg  0.018s median: +wake_lock_in=u0a179:"wake:com.facebook.lite/.intent.WakefulIntentService" (first at 23:05:07)
+  1 events,  0.016s total  0.016s avg  0.016s median: +wake_lock_in=u0a20:"*alarm*":"com.google.android.gms" (first at 23:05:07)
+  1 events,  0.001s total  0.001s avg  0.001s median: +wake_lock_in=u0a36:"*alarm*":"com.motorola.motocare" (first at 23:05:07)
+  1 events,  0.001s total  0.001s avg  0.001s median: +wake_lock_in=u0a47:"*walarm*:com.google.android.googlequicksearchbox/com.google.android.apps.gsa.sidekick.main.TrafficIntentService" (first at 23:04:44)
+total: 0.000 mAh, 169 events
+</pre>
+
+<br /><b>Proc/stat summary</b><ul>
+<li>Total User Time: 0ms</li>
+<li>Total System Time: 0ms</li>
+<li>Total IO Time: 0ms</li>
+<li>Total Irq Time: 0ms</li>
+<li>Total Soft Irq Time: 0ms</li>
+<li>Total Idle Time: 0ms</li>
+</ul>
+<pre>Process table:
+1000: "com.qualcomm.telephony"
+1001: "com.android.phone"
+u0a0: "com.motorola.ccc"
+u0a10: "com.motorola.context"
+u0a104: "com.motorola.config.wifi"
+u0a108: "com.whatsapp"
+u0a112: "com.facebook.orca"
+u0a144: "com.google.android.apps.photos"
+u0a16: "android.process.media"
+u0a161: "br.org.cesar.punchcardreminder"
+u0a179: "com.facebook.lite"
+u0a20: "com.google.android.gms"
+u0a23: "com.google.android.partnersetup"
+u0a24: "com.motorola.genie"
+u0a25: "com.android.systemui"
+u0a29: "com.facebook.katana"
+u0a34: "com.motorola.MotGallery2"
+u0a36: "com.motorola.motocare"
+u0a39: "com.android.vending"
+u0a45: "com.example.renato.nonasyncmeter"
+u0a47: "com.google.android.googlequicksearchbox:search"
+u0a57: "com.android.cellbroadcastreceiver"
+u0a59: "com.android.chrome"
+u0a69: "com.google.android.calendar"
+u0a7: "com.android.providers.calendar"
+u0a73: "com.google.android.talk:matchstick"
+u0a76: "com.google.android.inputmethod.latin"
+u0a81: "com.estrongs.android.pop"
+u0a9: "android.process.acore"
+u0a92: "com.google.android.apps.plus"
+
+</pre>
+
+</body>
+</html>
